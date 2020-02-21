@@ -71,7 +71,7 @@ resource "aws_instance" "monitor" {
 
   subnet_id              = element(tolist(data.aws_subnet_ids.subnets.ids), count.index)
   vpc_security_group_ids = [aws_security_group.monitor_sg.id]
-  key_name               = var.default_keypair_name
+  key_name               = aws_key_pair.monitoring_key.key_name
 
   associate_public_ip_address = true
 

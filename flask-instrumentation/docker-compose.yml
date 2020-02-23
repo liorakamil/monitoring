@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  webapp:
+    build: .
+    image: flask-http:${FLASK_TAG}
+    container_name: webapp 
+    expose:
+      - 5000
+    ports:
+      - 5000:5000
